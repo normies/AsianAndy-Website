@@ -2,7 +2,6 @@ var theaterMode = false;
 
 $(window).on('resize', function(){
     resizeIframes();
-    repositionNavbar();
 });
 
 $(document).ready(function() {
@@ -51,6 +50,11 @@ var toggleTheaterMode = function() {
 var resizeIframes = function() {
 
     var $window = $(window);
+
+    if ($window.width() < 992) {
+        return false;
+    }
+
     var $iframe = $('.video-iframe');
 
     var windowHeight = $window.height();
