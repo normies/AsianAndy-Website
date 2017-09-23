@@ -50,12 +50,14 @@ var toggleTheaterMode = function() {
 var resizeIframes = function() {
 
     var $window = $(window);
+    var $iframe = $('.video-iframe');
+    
 
     if ($window.width() < 992) {
+        $iframe.css('margin-top', 0);
+        $iframe.css('height', '56.25vw');
         return false;
     }
-
-    var $iframe = $('.video-iframe');
 
     var windowHeight = $window.height();
     var iFrameWidth = $iframe.width();
